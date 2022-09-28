@@ -1,8 +1,8 @@
 ﻿namespace MatrixClass;
 public class Matrix
 {
-    int a, b;
-    string? name = "";
+    private int a, b;
+    private string? name = "";
     private int[,] matrix;
 
     public Matrix(int a, int b, string? name)
@@ -96,17 +96,38 @@ public class Matrix
         return resultString;
     }
 
-    //public static double getAverage(Matrix m)
-    //{
-    //    int[] copies;
-    //    bool[] test;
-    //    double count=0, sum = 0;
-    //    for(int i = 0; i<m.a; i++)
-    //    {
-
-    //    }
-
-    //}
+    public static double getAverage(Matrix m)
+    {
+        int[] copies = new int[m.a * m.b];
+        int[] numbers = new int[m.a * m.b];
+        double count = 0, sum = 0;
+        for(int i = 0; i < m.a; i++)
+        {
+            for(int j = 0; j < m.b; j++)
+            {
+                if(m.matrix[i, j] < 0)
+                {
+                    int arrayIndex = Array.IndexOf(copies, m.matrix[i, j]);
+                    if ( arrayIndex == -1)
+                    { 
+                        copies.Append(m.matrix[i, j]);
+                        numbers[copies.Length - 1] = 1;
+                    }
+                    else
+                    {
+                        numbers[arrayIndex]++;
+                    }
+                }
+            }
+        }
+        foreach(int i in copies)
+        {
+            sum += i;
+            count++;
+        }
+        sum /= count;
+        return sum;
+    }
 }
 
 

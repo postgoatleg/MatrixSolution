@@ -10,3 +10,15 @@
 /Users/andreikovtun/Projects/MatrixSolution/MatrixClass/obj/Debug/net6.0/refint/MatrixClass.dll
 /Users/andreikovtun/Projects/MatrixSolution/MatrixClass/obj/Debug/net6.0/MatrixClass.pdb
 /Users/andreikovtun/Projects/MatrixSolution/MatrixClass/obj/Debug/net6.0/ref/MatrixClass.dll
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\bin\Debug\net6.0\MatrixClass.deps.json
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\bin\Debug\net6.0\MatrixClass.dll
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\bin\Debug\net6.0\MatrixClass.pdb
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\MatrixClass.csproj.AssemblyReference.cache
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\MatrixClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\MatrixClass.AssemblyInfoInputs.cache
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\MatrixClass.AssemblyInfo.cs
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\MatrixClass.csproj.CoreCompileInputs.cache
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\MatrixClass.dll
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\refint\MatrixClass.dll
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\MatrixClass.pdb
+C:\Users\goatl\source\repos\MatrixSolution\MatrixClass\obj\Debug\net6.0\ref\MatrixClass.dll

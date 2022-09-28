@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ConsoleInterface/1.0.0": {
+        "dependencies": {
+          "MatrixClass": "1.0.0"
+        },
+        "runtime": {
+          "ConsoleInterface.dll": {}
+        }
+      },
+      "MatrixClass/1.0.0": {
+        "runtime": {
+          "MatrixClass.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleInterface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MatrixClass/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

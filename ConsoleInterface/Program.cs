@@ -1,18 +1,32 @@
 ﻿using MatrixClass;
 
-Matrix drain = new(2, 2, GetString("Enter matrix name"));
-//Matrix drain1 = new(2, 2, GetString("Enter matrix name"));
-drain.FillMatrix();
-//drain1.FillMatrix();
-Console.WriteLine(drain.PrintMatrix());
-//Console.WriteLine(drain1.PrintMatrix());
-//Matrix drain3 = drain * drain1;
-//Console.WriteLine(drain3.PrintMatrix());
-Console.WriteLine("sum", drain.getAverage());
+Matrix matrixA = new(GetInt("Enter rows number"), GetInt("Enter columns number"), GetString("Enter matrix name"));
+Matrix matrixB = new(GetInt("Enter rows number"), GetInt("Enter columns number"), GetString("Enter matrix name"));
+Matrix matrixC = new(GetInt("Enter rows number"), GetInt("Enter columns number"), GetString("Enter matrix name"));
 
-//drain.ChangeElement(GetInt("Enter column"), GetInt("Enter row"), GetInt("Enter new value"));
-//Console.WriteLine(drain.PrintMatrix());
+matrixA.FillMatrix();
+matrixB.FillMatrix();
+matrixC.FillMatrix();
 
+Console.WriteLine($"Average value negative elements of {matrixA.GetName()}, that repeat 3 times and more = {matrixA.GetAverage(3)}");
+Console.WriteLine($"Average value negative elements of {matrixA.GetName()}, that repeat 3 times and more = {matrixB.GetAverage(3)}");
+Console.WriteLine($"Average value negative elements of {matrixB.GetName()}, that repeat 3 times and more = {matrixC.GetAverage(3)}");
+
+Matrix matrixD = (matrixA * matrixB) * matrixC;
+Console.WriteLine($"A*B*C={matrixD.PrintMatrix()}");
+int n = GetInt("enter number of repeats for negative elements of Matrix A");
+if(matrixA.GetAverage() > n && matrixC.IsTrue())
+{
+    int minAvr = matrixA.GetAverage(2) < matrixB.GetAverage(2) ? DoubleToInt(matrixA.GetAverage(2)) : DoubleToInt(matrixB.GetAverage(2));
+    for (int i = 0; i<matrixC.GetA(); i++)
+    {
+        for(int j = 0; j< matrixC.GetB(); j++)
+        {
+            matrixC.ChangeElement(i, j, minAvr * matrixC.GetElement(i,j));
+        }
+    }    
+}
+Console.WriteLine(matrixC.PrintMatrix());
 Console.ReadLine();
 
 static string? GetString(string description)
@@ -28,4 +42,9 @@ static int GetInt(string description)
     Console.WriteLine(description);
     int retValue = Convert.ToInt32(Console.ReadLine());
     return retValue;
+}
+
+static int DoubleToInt(double value)
+{
+    return (int)Math.Floor(value);
 }

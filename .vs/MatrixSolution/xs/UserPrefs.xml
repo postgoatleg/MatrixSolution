@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{8BC454CD-DA6E-4C71-8315-8F2F3A06993E}|Default">
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MatrixTests FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.ConsoleInterface PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MatrixClass/Matrix.cs">
     <Files>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixClass", "MatrixClass\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleInterface", "ConsoleInterface\ConsoleInterface.csproj", "{8BC454CD-DA6E-4C71-8315-8F2F3A06993E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixTests", "MatrixTests\MatrixTests.csproj", "{E6F43EDD-C6C8-436A-A46C-0ACAF319EF0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8BC454CD-DA6E-4C71-8315-8F2F3A06993E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BC454CD-DA6E-4C71-8315-8F2F3A06993E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BC454CD-DA6E-4C71-8315-8F2F3A06993E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F43EDD-C6C8-436A-A46C-0ACAF319EF0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F43EDD-C6C8-436A-A46C-0ACAF319EF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F43EDD-C6C8-436A-A46C-0ACAF319EF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F43EDD-C6C8-436A-A46C-0ACAF319EF0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

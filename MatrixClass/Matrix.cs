@@ -23,6 +23,21 @@ public class Matrix
         this.matrix[i,j] = num;
     }
 
+    public int GetA()
+    {
+        return this.a;
+    }
+
+    public int GetElement(int i, int j)
+    {
+        return this.matrix[i, j];
+    }
+
+    public int GetB()
+    {
+        return this.b;
+    }
+
     public bool IsTrue()
     {
         int i = 0;
@@ -47,7 +62,7 @@ public class Matrix
         {
             for(int j =0; j < this.b; j++)
             {
-                Console.Write($"Enter a[{i},{j}]: ");
+                Console.Write($"Enter {this.name}[{i},{j}]: ");
                 this.matrix[i,j] = Convert.ToInt32(Console.ReadLine());
             }
         }
@@ -55,7 +70,7 @@ public class Matrix
 
     public static Matrix operator *(Matrix m1, Matrix m2)
     {
-        if (m1.a != m2.a && m1.b != m2.b)
+        if (m1.a != m2.a || m1.b != m2.b)
         {
             return new Matrix(0, 0, "null");
         }
@@ -95,40 +110,51 @@ public class Matrix
         }
         return resultString;
     }
+    public string? GetName()
+    {
+        return this.name;
+    }
 
-    public double getAverage()
+    public double GetAverage(int n=0)
     {
         int[] copies = new int[this.a * this.b];
         int[] numbers = new int[this.a * this.b];
+        int k = 0;
         double count = 0, sum = 0;
-        for(int i = 0; i < this.a; i++)
+        for (int i = 0; i < this.a; i++)
         {
-            for(int j = 0; j < this.b; j++)
+            for (int j = 0; j < this.b; j++)
             {
-                if(this.matrix[i, j] < 0)
+                if (this.matrix[i, j] < 0)
                 {
-                    Console.WriteLine("el", this.matrix[i,j], "ind",Array.IndexOf(copies, this.matrix[i, j]));
-                    int arrayIndex = Array.IndexOf(copies, this.matrix[i, j]);
-                    Console.WriteLine("arr ind:", arrayIndex);
-                    if ( arrayIndex == -1)
+                    int arrInd = Array.IndexOf(copies, this.matrix[i, j]);
+                    if (arrInd == -1)
                     { 
-                        copies.Append(this.matrix[i, j]);
-                        numbers[copies.Length - 1] = 1;
+                    //count += 1;
+                    copies[k] = this.matrix[i, j];
+                    numbers[k]++;
+                    k++;
                     }
                     else
                     {
-                        numbers[arrayIndex]++;
+                        numbers[arrInd]++;
+                        //count += 1;
                     }
+
                 }
             }
         }
-        foreach(int i in copies)
+
+        for (int i = 0; i<copies.Length; i++)
         {
-            sum += i;
-            count++;
+            if (numbers[i] >= n)
+            {
+                sum += copies[i] * numbers[i];
+                count += numbers[i];
+            }
         }
-        sum /= count;
-        return sum;
+        count = count == 0 ? 1 : count;
+        return sum / count;
     }
 }
 

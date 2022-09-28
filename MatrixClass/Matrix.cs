@@ -1,9 +1,9 @@
 ﻿namespace MatrixClass;
 public class Matrix
 {
-    private int a, b;
-    private string? name = "";
-    private int[,] matrix;
+    int a, b;
+    string? name = "";
+    int[,] matrix;
 
     public Matrix(int a, int b, string? name)
     {
@@ -96,21 +96,23 @@ public class Matrix
         return resultString;
     }
 
-    public static double getAverage(Matrix m)
+    public double getAverage()
     {
-        int[] copies = new int[m.a * m.b];
-        int[] numbers = new int[m.a * m.b];
+        int[] copies = new int[this.a * this.b];
+        int[] numbers = new int[this.a * this.b];
         double count = 0, sum = 0;
-        for(int i = 0; i < m.a; i++)
+        for(int i = 0; i < this.a; i++)
         {
-            for(int j = 0; j < m.b; j++)
+            for(int j = 0; j < this.b; j++)
             {
-                if(m.matrix[i, j] < 0)
+                if(this.matrix[i, j] < 0)
                 {
-                    int arrayIndex = Array.IndexOf(copies, m.matrix[i, j]);
+                    Console.WriteLine("el", this.matrix[i,j], "ind",Array.IndexOf(copies, this.matrix[i, j]));
+                    int arrayIndex = Array.IndexOf(copies, this.matrix[i, j]);
+                    Console.WriteLine("arr ind:", arrayIndex);
                     if ( arrayIndex == -1)
                     { 
-                        copies.Append(m.matrix[i, j]);
+                        copies.Append(this.matrix[i, j]);
                         numbers[copies.Length - 1] = 1;
                     }
                     else

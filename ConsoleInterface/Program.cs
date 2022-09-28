@@ -8,7 +8,7 @@ Console.WriteLine(drain.PrintMatrix());
 //Console.WriteLine(drain1.PrintMatrix());
 //Matrix drain3 = drain * drain1;
 //Console.WriteLine(drain3.PrintMatrix());
-Console.WriteLine(Matrix.getAverage(drain));
+Console.WriteLine("sum", drain.getAverage());
 
 //drain.ChangeElement(GetInt("Enter column"), GetInt("Enter row"), GetInt("Enter new value"));
 //Console.WriteLine(drain.PrintMatrix());

@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\goatl\\source\\repos\\MatrixSolution\\MatrixClass\\MatrixClass.csproj": {}
+    "/Users/andreikovtun/Projects/MatrixSolution/MatrixClass/MatrixClass.csproj": {}
   },
   "projects": {
-    "C:\\Users\\goatl\\source\\repos\\MatrixSolution\\MatrixClass\\MatrixClass.csproj": {
+    "/Users/andreikovtun/Projects/MatrixSolution/MatrixClass/MatrixClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goatl\\source\\repos\\MatrixSolution\\MatrixClass\\MatrixClass.csproj",
+        "projectUniqueName": "/Users/andreikovtun/Projects/MatrixSolution/MatrixClass/MatrixClass.csproj",
         "projectName": "MatrixClass",
-        "projectPath": "C:\\Users\\goatl\\source\\repos\\MatrixSolution\\MatrixClass\\MatrixClass.csproj",
-        "packagesPath": "C:\\Users\\goatl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goatl\\source\\repos\\MatrixSolution\\MatrixClass\\obj\\",
+        "projectPath": "/Users/andreikovtun/Projects/MatrixSolution/MatrixClass/MatrixClass.csproj",
+        "packagesPath": "/Users/andreikovtun/.nuget/packages/",
+        "outputPath": "/Users/andreikovtun/Projects/MatrixSolution/MatrixClass/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\goatl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/andreikovtun/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
         }
       }
     }

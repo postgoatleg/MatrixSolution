@@ -7,18 +7,26 @@ public class UnitTest1
     [TestMethod]
     public void TestMultiply()
     {
-        Matrix a = new(2, 2, "a");
-        Matrix b = new(2, 2, "b");
-        a.ChangeElement(0, 0, 1);
-        a.ChangeElement(0, 1, 2);
-        a.ChangeElement(1, 0, 3);
-        a.ChangeElement(1, 1, 4);
-        b.ChangeElement(0, 0, 5);
-        b.ChangeElement(0, 1, 6);
-        b.ChangeElement(1, 0, 7);
-        b.ChangeElement(1, 1, 8);
+        int[,] ma = new int[,] { { 1, 2 }, { 3, 4 } };
+        int[,] mb = new int[,] { { 5, 6 }, { 7, 8 } };
+        Matrix a = new(2, 2, "a", ma);
+        Matrix b = new(2, 2, "b", mb);
         Matrix c = a * b;
-        Equals(c.PrintMatrix(), $"Matrix ab:\n19, 22,\n43, 50,\n");
+        //int count = 0;
+        int[,] ans = new int[,] { { 19, 22 }, { 43, 50 } };
+        for(int i = 0; i<c.GetA();i++)
+        {
+            for(int j = 0; j<c.GetB(); j++)
+            {
+                Assert.AreEqual(ans[i, j], c.GetElement(i, j));
+                //if(ans[i,j] == c.GetElement(i,j))
+                //{
+                //    count++;
+                //}
+            }
+        }
+        //bool boolAns = count == c.GetA() * c.GetB() ? true : false;
+        //Assert.AreEqual(true, boolAns);
     }
 
     [TestMethod]
@@ -30,7 +38,7 @@ public class UnitTest1
         a.ChangeElement(1, 0, -5);
         a.ChangeElement(1, 1, 4);
 
-        Equals(a.GetAverage(), -20/3);
+        Assert.AreEqual((double)-20/3, a.GetAverage());
     }
 
     [TestMethod]
@@ -39,9 +47,18 @@ public class UnitTest1
         Matrix a = new(2, 2, "a");
         a.ChangeElement(0, 0, 0);
         a.ChangeElement(0, 1, 0);
-        a.ChangeElement(1, 0, -5);
+        a.ChangeElement(1, 0, 0);
         a.ChangeElement(1, 1, 0);
 
-        Equals(a.IsTrue(), true);
+        Assert.AreEqual(false, a.IsTrue());
+    }
+
+    [TestMethod]
+    public void TestChangeElement()
+    {
+        Matrix a = new(2, 2, "a");
+        a.ChangeElement(0, 0, 95);
+
+        Assert.AreEqual(95, a.GetElement(0,0));
     }
 }

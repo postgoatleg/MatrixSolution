@@ -1,16 +1,19 @@
-﻿namespace MatrixClass;
+﻿using System.Runtime.InteropServices;
+
+namespace MatrixClass;
 public class Matrix
 {
     int a, b;
     string? name = "";
     int[,] matrix;
 
-    public Matrix(int a, int b, string? name)
+    public Matrix(int a, int b, string? name, int[,]? matrixValues = null)
     {
         this.a = a;
         this.b = b;
         this.name = name;
         matrix = new int[a, b];
+        matrix = matrixValues == null ? matrix : matrixValues;
     }
     /// <summary>
     /// i - num of culumn, j - num of row, num - new value
@@ -40,20 +43,28 @@ public class Matrix
 
     public bool IsTrue()
     {
-        int i = 0;
+        int i = 0, count = 0;
         while (i < this.a)
         {
             int j = 0;
             while (j < this.b)
             {
-                if(this.matrix[i, j] != 0)
+                if(this.matrix[i, j] == 0)
                 {
-                    return true;
+                   count++;
                 }
+                j++;
             }
             i++;
         }
-        return false;
+        if(this.a*this.b==count)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public void FillMatrix()
@@ -96,6 +107,11 @@ public class Matrix
         }
     }
 
+    public int[,] GetMatrix()
+    {
+        return this.matrix;
+    }
+
     public string PrintMatrix()
     {
         string resultString = $"Matrix {this.name}:\n";
@@ -130,7 +146,6 @@ public class Matrix
                     int arrInd = Array.IndexOf(copies, this.matrix[i, j]);
                     if (arrInd == -1)
                     { 
-                    //count += 1;
                     copies[k] = this.matrix[i, j];
                     numbers[k]++;
                     k++;
@@ -138,7 +153,6 @@ public class Matrix
                     else
                     {
                         numbers[arrInd]++;
-                        //count += 1;
                     }
 
                 }

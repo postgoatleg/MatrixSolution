@@ -107,6 +107,86 @@ public class Matrix
         }
     }
 
+    public static bool operator >(Matrix m1, Matrix m2)
+    {
+        int sum1 = 0, sum2 = 0;
+        foreach(int el in m1.matrix)
+        {
+            sum1 += el;
+        }
+        foreach (int el in m2.matrix)
+        {
+            sum2 += el;
+        }
+        if(sum1>sum2)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public static bool operator <(Matrix m1, Matrix m2)
+    {
+        int sum1 = 0, sum2 = 0;
+        foreach (int el in m1.matrix)
+        {
+            sum1 += el;
+        }
+        foreach (int el in m2.matrix)
+        {
+            sum2 += el;
+        }
+        if (sum1 < sum2)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public static bool operator ==(Matrix m1, Matrix m2)
+    {
+        if(m1.a != m2.a || m1.b != m2.b)
+        {
+            return false;
+        }
+        for(int i = 0; i < m1.a; i++)
+        { 
+            for(int j = 0; j < m1.b; j++)
+            {
+                if (m1.matrix[i,j] != m2.matrix[i, j])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static bool operator !=(Matrix m1, Matrix m2)
+    {
+        if (m1.a != m2.a || m1.b != m2.b)
+        {
+            return true;
+        }
+        for (int i = 0; i < m1.a; i++)
+        {
+            for (int j = 0; j < m1.b; j++)
+            {
+                if (m1.matrix[i, j] != m2.matrix[i, j])
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public int[,] GetMatrix()
     {
         return this.matrix;
@@ -159,7 +239,53 @@ public class Matrix
             }
         }
 
+
+
+
         for (int i = 0; i<copies.Length; i++)
+        {
+            if (numbers[i] >= n)
+            {
+                sum += copies[i] * numbers[i];
+                count += numbers[i];
+            }
+        }
+        count = count == 0 ? 1 : count;
+        return sum / count;
+    }
+
+    public double GetAverage(int startI, int startJ, int n)
+    {
+        int[] copies = new int[this.a * this.b];
+        int[] numbers = new int[this.a * this.b];
+        int k = 0;
+        double count = 0, sum = 0;
+        for (int i = startI; i < this.a; i++)
+        {
+            for (int j = startJ; j < this.b; j++)
+            {
+                if (this.matrix[i, j] < 0)
+                {
+                    int arrInd = Array.IndexOf(copies, this.matrix[i, j]);
+                    if (arrInd == -1)
+                    {
+                        copies[k] = this.matrix[i, j];
+                        numbers[k]++;
+                        k++;
+                    }
+                    else
+                    {
+                        numbers[arrInd]++;
+                    }
+
+                }
+            }
+        }
+
+
+
+
+        for (int i = 0; i < copies.Length; i++)
         {
             if (numbers[i] >= n)
             {

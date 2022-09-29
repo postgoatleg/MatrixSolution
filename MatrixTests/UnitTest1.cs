@@ -61,4 +61,34 @@ public class UnitTest1
 
         Assert.AreEqual(95, a.GetElement(0,0));
     }
+
+    [TestMethod]
+    public void TestCompareMore()
+    {
+        int[,] ma = new int[,] { { 1, 2 }, { 3, 4 } };
+        int[,] mb = new int[,] { { 5, 6 }, { 7, 8 } };
+        Matrix a = new(2, 2, "a", ma);
+        Matrix b = new(2, 2, "b", mb);
+        Assert.AreEqual(true, b>a);
+    }
+
+    [TestMethod]
+    public void TestCompareNotEqual()
+    {
+        int[,] ma = new int[,] { { 1, 2 }, { 3, 4 } };
+        int[,] mb = new int[,] { { 5, 6 }, { 7, 8 } };
+        Matrix a = new(2, 2, "a", ma);
+        Matrix b = new(2, 2, "b", mb);
+        Assert.AreEqual(true, b != a);
+    }
+
+    [TestMethod]
+    public void TestCompareEqual()
+    {
+        int[,] ma = new int[,] { { 1, 2 }, { 3, 4 } };
+        int[,] mb = new int[,] { { 1, 2 }, { 3, 4 } };
+        Matrix a = new(2, 2, "a", ma);
+        Matrix b = new(2, 2, "b", mb);
+        Assert.AreEqual(true, b == a);
+    }
 }
